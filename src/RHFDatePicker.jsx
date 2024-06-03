@@ -1,5 +1,5 @@
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { Controller } from 'react-hook-form';
 
@@ -12,7 +12,7 @@ const RHFDatePicker = ({ name, label, onChange, minDate, ...other }) => {
           <DatePicker
             format="DD/MM/YYYY"
             label={label}
-            value={moment(field?.value)}
+            value={dayjs(field?.value)}
             onChange={(newValue) => {
               if (onChange) {
                 onChange(newValue?.format('YYYY-MM-DD'));
